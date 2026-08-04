@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login - Chat App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #e5ddd5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-box {
+            background: #fff;
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+        select, button {
+            font-size: 16px;
+            padding: 8px 12px;
+            margin-top: 15px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+        .user-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        button {
+            background: #25d366;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background: #1ebc59;
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-box">
+    <h2>Who are you?</h2>
+    <p>Demo login — pick a user, no password needed.</p>
+    <form method="post">
+        {% csrf_token %}
+        <div class="user-buttons">
+            {% for user in users %}
+            <button type="submit" name="username" value="{{ user }}">{{ user }}</button>
+            {% endfor %}
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
