@@ -28,6 +28,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     "127.0.0.1",
     "localhost",
+    "chat-app-production-1d93.up.railway.app",
     "aanjaneyk-chat-app.up.railway.app",
 ]
 
@@ -139,3 +140,8 @@ CHANNEL_LAYERS = {
         "BACKEND": "channels.layers.InMemoryChannelLayer",
     },
 }
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://aanjaneyk-chat-app.up.railway.app",
+    "https://chat-app-production-1d93.up.railway.app",
+]
