@@ -262,8 +262,10 @@ function connectSocket(){
 
     loadHistory();
 
-    socket=new WebSocket(
-        "ws://"+window.location.hostname+":8000/ws/chat/"+CURRENT_USER+"/"
+    const protocol = window.location.protocol === "https:" ? "wss://" : "ws://";
+
+    socket = new WebSocket(
+        protocol + window.location.host + "/ws/chat/" + CURRENT_USER + "/"
     );
 
     socket.onopen=function(){
