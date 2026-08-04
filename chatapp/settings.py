@@ -28,7 +28,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     "127.0.0.1",
     "localhost",
-    "chat-app-production-1d93.up.railway.app",
+    "aanjaneyk-chat-app.up.railway.app",
 ]
 
 
